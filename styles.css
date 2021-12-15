@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Kings&display=swap');
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-ribbon: 'Kings', cursive;
+    --font-normal: 'Aladin', cursive;
+    --bg: #def2f1;
+    --container: #feffff;
+    --ribbon: #2b7a78;
+    --shadow: #2c3531;
+    --brown: #d9b08c;
+    --brown-opc: #d9b08c70;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--font-normal);
+    color: var(--shadow);
+    background: var(--bg);
+}
+
+.container {
+    width: 95%;
+    margin: 25px auto;
+    min-height: 100vh;
+    border-radius: 5px;
+    background: var(--container);
+    box-shadow: 0 0 15px 0 var(--shadow);
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ribbon {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    overflow: hidden;  
+}
+.ribbon:nth-child(1) {
+    top: -10px;
+    left: -10px;
+}
+.ribbon:nth-child(2) {
+    top: -10px;
+    right: -10px;
+}
+
+.ribbon::before {
+    position: absolute;
+    width: 250px;
+    height: 60px;
+    background: var(--ribbon);
+    font-family: var(--font-ribbon);
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--container) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    box-shadow: 0 0 10px var(--shadow);
+}
+.ribbon:nth-child(1)::before {
+    content: 'Advent of CSS';
+    transform: rotate(-45deg) translateY(-45px);
+}
+.ribbon:nth-child(2)::before {
+    content: 'Advent of JS';
+    transform: rotate(45deg) translateY(-45px);
+}
+
+.ribbon::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    z-index: -1;
+    background: var(--shadow);
+}
+.ribbon:nth-child(1)::after {
+    left: 0;
+    bottom: 21px;
+    box-shadow: 169px -170px var(--shadow);
+}
+.ribbon:nth-child(2)::after {
+    right: 0;
+    bottom: 21px;
+    box-shadow: -169px -170px var(--shadow);
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5rem;
+}
+
+.header .info {
+    width: 50%;
+}
+
+.header .info h2 {
+    font-size: 3rem;
+    padding: 1rem 0;
+}
+.header .info p {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.header .info .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .info .social span {
+    margin: 10px 25px;
+    height: 50px;
+    width: 50px;
+    background: var(--shadow);
+    border-radius: 5px;
+}
+
+.header .info .social span:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 5px var(--shadow), 
+        0 0 10px var(--container), 
+        0 0 25px var(--brown), 
+        0 0 50px var(--brown-opc);
+}
+
+.header .info .social a {
+    color: var(--brown-opc);
+    font-size: 1.5rem;
+    width: 100%;
+    height: 100%;
+    display:grid;
+    place-items: center;
+    text-decoration: none;
+}
+
+.header .info .social a:hover {
+    color: var(--brown);
+}
+
+.header .dp img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.projects {
+    width: 100%;
+    padding: 2rem 8rem;
+    margin: 0 0 5rem 0;
+    display: grid;
+    place-items: center;
+    row-gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);;
+}
+
+.projects .project {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--brown);
+    transition: all 0.5s;
+}
+
+.projects .project::before {
+    position: absolute;
+    top: 48px;
+    left: 3px;
+    width: 120px;
+    height: 30px;
+    background: var(--brown);
+    font-family: var(--font-ribbon);
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--shadow) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    box-shadow: 0 0 10px var(--ribbon);
+    content: attr(data-day);
+    transform: rotate(-45deg) translateY(-45px);
+}
+
+.projects .project:hover {
+    transform: scale(1.1) rotate(-10deg);
+    transform-origin: bottom;
+    box-shadow: 0 0 5px var(--shadow), 
+        0 0 10px var(--container), 
+        0 0 25px var(--brown), 
+        0 0 50px var(--brown-opc);
+}
+
+.projects .project img{
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
+.footer {
+    background: var(--shadow);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    color: var(--container);
+    font-size: 1.5rem;
+    line-height: 5rem;
+    text-align: center;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.footer a {
+    color: var(--bg);
+    text-decoration: none;
+    padding: 0 0 0 5px;
+}
