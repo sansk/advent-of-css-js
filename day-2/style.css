@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #EFF0F6;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 10vh;
+}
+
+.menuTitle {
+  font-size: 6vh;
+  padding-left: 2rem;
+  margin-bottom: 5rem;
+}
+
+.container, 
+.orderContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 100%;
+}
+
+.bgElement1 {
+  position: fixed;
+  right: -50px;
+  bottom: -250px;
+  transform: rotate(-11deg);
+}
+
+.bgElement2 {
+  position: fixed;
+  bottom: -70px;
+  left: -50px;
+}
+
+.bgElement3 {
+  position: fixed;
+  top: -50px;
+  right: 0;
+
+}
+
+.menu, 
+.order {
+  position: relative;
+  width: 33vw;
+  max-width: 35vw;
+  background-color: white;
+  border-radius: 35px;
+  padding: 20px;
+  padding-right: 0;
+  z-index: 2 !important;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: pink;
+  border-radius: 35px 0 0 35px;
+  margin-bottom: 45px;
+  height: 210px;
+  padding: 10px;
+}
+
+.item img {
+  position: relative;
+  width: 200px;
+  height: 205px;
+  top: -35px;
+  left: -20px
+}
+
+.itemInfo h3 {
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.itemInfo p {
+  margin: 0 auto;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.itemInfo button {
+  position: absolute;
+  width: 180px;
+  background-color: #6B00F5;
+  color: white;
+  font-weight: 700;
+  font-size: 22px;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 35px;
+  bottom: -25px;
+}
+
+.item:nth-child(3n+1) {
+  background-color: rgba(122, 179, 243, .2);
+}
+
+
+.item:nth-child(3n+2) {
+  background-color: rgba(233, 121, 178, 0.2);
+}
+
+
+.item:nth-child(3n+3) {
+  background-color: rgba(215, 215, 149, .2);
+}
+
+.cartItem {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.cartItem p, .cartItem h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.cartImage {
+  width: 100px;
+  height: 100px;
+}
+
+.cartButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 140px;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.cartItemInfo {
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+}
+
+.cartItemInfo h3 {
+  font-weight: 400;
+}
+
+.cartItemInfo p {
+  font-weight: 700;
+}
+
+.cartItemControls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cartItemControls span {
+  padding-left: 20px;
+  font-size: 2.5rem;
+}
+
+.quantityImageCover {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  top: 25px;
+  left: 25px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.chevronLeft, .chevronRight {
+  background-color: #6B00F5;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.chevronRight {
+  transform: rotate(180deg);
+}
+
+.itemTotal {
+  position: absolute;
+  display: block;
+  top: 60px;
+  right: 30px;
+  font-size: 3rem;
+  font-weight: bold;
+}
