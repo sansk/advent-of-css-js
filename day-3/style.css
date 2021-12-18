@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg: #37B2C3;
+	--white: #ffffff;
+  --black: #000000;
+  --white-hover: #ffd200;
+  --black-hover: #f40082;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.white-keys  {
+  fill: var(--white);
+}
+
+.black-keys  {
+  fill: var(--black);
+}
+
+.white-keys:hover {
+  fill: var(--white-hover);
+}
+
+.black-keys:hover {
+  fill: var(--black-hover);
+}
